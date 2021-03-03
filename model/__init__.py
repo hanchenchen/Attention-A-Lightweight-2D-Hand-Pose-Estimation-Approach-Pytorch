@@ -1,8 +1,6 @@
-
-
-from mish import Mish
-from attention_augmentation2D import *
-from blur import *
+from .mish import Mish
+from .attention_augmentation2D import *
+from .blur import *
 
 
 # DepthwiseConv2d: https://gist.github.com/bdsaglam/b16de6ae6662e7a783e06e58e2c5185a
@@ -42,7 +40,6 @@ def aug_block(in_channels, out_channels, kernel_size, dk,dv, Nh, shape):
 class ARB(nn.Module):
     def __init__(self, in_channels, out_channels, kernel_size, aug=True, dk=40, dv=4, Nh=4, shape = 224):
         super(ARB, self).__init__()
-        # print('in_channels:',in_channels)
         self.conv1 = nn.Sequential(
             nn.Conv2d(in_channels, out_channels * 4, kernel_size, padding = kernel_size//2),
             nn.BatchNorm2d(out_channels * 4),
@@ -134,10 +131,7 @@ class light_Model(nn.Module):
 
     def forward(self, inputs):
         x = self.dense1(inputs)
-        # print(x.shape)
         x = self.transition1(x)
-        # print(x.shape)
-
         x = self.dense2(x)
         x = self.transition2(x)
         x = self.dense3(x)
@@ -151,19 +145,18 @@ class light_Model(nn.Module):
         x = self.dense7(x)
         x = self.transition7(x)
         x = self.dense8(x)
-        print(x.shape)
         x = self.aug_block(x)
         x = self.avg_pool(x)
         x = self.conv(x)
         x = self.relu(x)
         x[x > 1.] = 1.
-        x = torch.reshape(x, (21, 2))
+        x = torch.reshape(x, (-1, 21, 2))
         return x
-
-# model = light_Model()
-x = torch.randn(3, 320 + 128, 2, 2)
-# print(model)
-# print(x)
-'''y = model(x)'''
-y=aug_block(in_channels = 320 + 128, out_channels = 100, kernel_size = 2, dk = 0.1,dv = 0.1, Nh = 10, shape = 2)(x)
-print('y', y)
+if __name__ == "__main__":
+    model = light_Model()
+    x = torch.randn(1, 3, 224, 224)
+    # print(model)
+    # print(x)
+    y = model(x)
+    # y=aug_block(in_channels = 320 + 128, out_channels = 100, kernel_size = 2, dk = 0.1,dv = 0.1, Nh = 10, shape = 2)(x)
+    print('y', y.shape)

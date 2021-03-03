@@ -19,12 +19,13 @@ class AugmentedConv(nn.Module):
         self.shape = shape
         self.relative = relative
         self.stride = stride
-        self.padding = (0,1, 0, 1) # (self.kernel_size + 1) // 2
+        self.padding = (self.kernel_size - 1) // 2
 
         assert self.Nh != 0, "integer division or modulo by zero, Nh >= 1"
         assert self.dk % self.Nh == 0, "dk should be divided by Nh. (example: out_channels: 20, dk: 40, Nh: 4)"
         assert self.dv % self.Nh == 0, "dv should be divided by Nh. (example: out_channels: 20, dv: 4, Nh: 4)"
         assert stride in [1, 2], str(stride) + " Up to 2 strides are allowed."
+
 
         self.conv_out = nn.Conv2d(self.in_channels, self.out_channels - self.dv, self.kernel_size, stride=stride, padding=self.padding)
 
@@ -42,6 +43,8 @@ class AugmentedConv(nn.Module):
 
         # conv_out
         # (batch_size, out_channels, height, width)
+        if not (self.kernel_size % 2):
+            x = torch.nn.functional.pad(x, (0, 1, 0, 1), mode='constant', value=0)
         conv_out = self.conv_out(x)
         batch, _, height, width = conv_out.size()
 
@@ -53,9 +56,7 @@ class AugmentedConv(nn.Module):
         flat_q, flat_k, flat_v, q, k, v = self.compute_flat_qkv(x, self.dk, self.dv, self.Nh)
         logits = torch.matmul(flat_q.transpose(2, 3), flat_k)
         if self.relative:
-            print(logits.shape, q.shape)
             h_rel_logits, w_rel_logits = self.relative_logits(q)
-            print(logits.shape, h_rel_logits.shape, w_rel_logits.shape)
             logits += h_rel_logits
             logits += w_rel_logits
         weights = F.softmax(logits, dim=-1)

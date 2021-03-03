@@ -1,0 +1,528 @@
+2021-03-03 15:29:51,495:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 15:29:51,495:INFO: Create Model ...
+2021-03-03 15:32:26,210:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 15:32:26,210:INFO: Create Model ...
+2021-03-03 15:34:41,582:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 15:34:41,582:INFO: Create Model ...
+2021-03-03 15:35:33,362:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 15:35:33,362:INFO: Create Model ...
+2021-03-03 15:35:35,327:INFO: Total images in training data is 1
+2021-03-03 15:35:35,327:INFO: Total images in validation data is 1
+2021-03-03 15:35:35,327:INFO: Total images in testing data is 1
+2021-03-03 16:49:48,349:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 16:49:48,350:INFO: Create Model ...
+2021-03-03 16:49:50,082:INFO: Total images in training data is 1
+2021-03-03 16:49:50,082:INFO: Total images in validation data is 1
+2021-03-03 16:49:50,082:INFO: Total images in testing data is 1
+2021-03-03 16:49:50,084:INFO: 
+Start training ===========================================>
+2021-03-03 16:49:50,085:INFO: Initial learning Rate: 0.0001
+2021-03-03 16:49:50,085:INFO: Epoch[1/15] ==============>
+2021-03-03 16:50:54,761:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 16:50:54,762:INFO: Create Model ...
+2021-03-03 16:50:56,461:INFO: Total images in training data is 1
+2021-03-03 16:50:56,461:INFO: Total images in validation data is 1
+2021-03-03 16:50:56,462:INFO: Total images in testing data is 1
+2021-03-03 16:50:56,463:INFO: 
+Start training ===========================================>
+2021-03-03 16:50:56,465:INFO: Initial learning Rate: 0.0001
+2021-03-03 16:50:56,465:INFO: Epoch[1/15] ==============>
+2021-03-03 16:51:26,639:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 16:51:26,640:INFO: Create Model ...
+2021-03-03 16:51:28,353:INFO: Total images in training data is 1
+2021-03-03 16:51:28,353:INFO: Total images in validation data is 1
+2021-03-03 16:51:28,354:INFO: Total images in testing data is 1
+2021-03-03 16:51:28,356:INFO: 
+Start training ===========================================>
+2021-03-03 16:51:28,356:INFO: Initial learning Rate: 0.0001
+2021-03-03 16:51:28,356:INFO: Epoch[1/15] ==============>
+2021-03-03 16:59:02,732:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 16:59:02,733:INFO: Create Model ...
+2021-03-03 16:59:04,479:INFO: Total images in training data is 1
+2021-03-03 16:59:04,480:INFO: Total images in validation data is 1
+2021-03-03 16:59:04,480:INFO: Total images in testing data is 1
+2021-03-03 16:59:04,482:INFO: 
+Start training ===========================================>
+2021-03-03 16:59:04,483:INFO: Initial learning Rate: 0.0001
+2021-03-03 16:59:04,483:INFO: Epoch[1/15] ==============>
+2021-03-03 17:02:11,994:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 17:02:11,994:INFO: Create Model ...
+2021-03-03 17:02:13,859:INFO: Total images in training data is 1
+2021-03-03 17:02:13,859:INFO: Total images in validation data is 1
+2021-03-03 17:02:13,859:INFO: Total images in testing data is 1
+2021-03-03 17:02:13,859:INFO: 
+Start training ===========================================>
+2021-03-03 17:02:13,859:INFO: Initial learning Rate: 0.0001
+2021-03-03 17:02:13,859:INFO: Epoch[1/15] ==============>
+2021-03-03 17:05:01,534:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 17:05:01,534:INFO: Create Model ...
+2021-03-03 17:05:03,259:INFO: Total images in training data is 1
+2021-03-03 17:05:03,260:INFO: Total images in validation data is 1
+2021-03-03 17:05:03,260:INFO: Total images in testing data is 1
+2021-03-03 17:05:03,262:INFO: 
+Start training ===========================================>
+2021-03-03 17:05:03,263:INFO: Initial learning Rate: 0.0001
+2021-03-03 17:05:03,263:INFO: Epoch[1/15] ==============>
+2021-03-03 17:10:15,046:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 17:10:15,046:INFO: Create Model ...
+2021-03-03 17:10:16,801:INFO: Total images in training data is 1
+2021-03-03 17:10:16,802:INFO: Total images in validation data is 1
+2021-03-03 17:10:16,802:INFO: Total images in testing data is 1
+2021-03-03 17:10:16,803:INFO: 
+Start training ===========================================>
+2021-03-03 17:10:16,803:INFO: Initial learning Rate: 0.0001
+2021-03-03 17:10:16,803:INFO: Epoch[1/15] ==============>
+2021-03-03 17:11:05,935:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 17:11:05,935:INFO: Create Model ...
+2021-03-03 17:11:07,706:INFO: Total images in training data is 1
+2021-03-03 17:11:07,707:INFO: Total images in validation data is 1
+2021-03-03 17:11:07,707:INFO: Total images in testing data is 1
+2021-03-03 17:11:07,708:INFO: 
+Start training ===========================================>
+2021-03-03 17:11:07,708:INFO: Initial learning Rate: 0.0001
+2021-03-03 17:11:07,709:INFO: Epoch[1/15] ==============>
+2021-03-03 18:30:18,731:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 18:30:18,732:INFO: Create Model ...
+2021-03-03 18:30:20,482:INFO: Total images in training data is 1
+2021-03-03 18:30:20,482:INFO: Total images in validation data is 1
+2021-03-03 18:30:20,482:INFO: Total images in testing data is 1
+2021-03-03 18:30:20,482:INFO: 
+Start training ===========================================>
+2021-03-03 18:30:20,482:INFO: Initial learning Rate: 0.0001
+2021-03-03 18:30:20,482:INFO: Epoch[1/15] ==============>
+2021-03-03 18:31:42,346:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 18:31:42,346:INFO: Create Model ...
+2021-03-03 18:31:44,183:INFO: Total images in training data is 1
+2021-03-03 18:31:44,183:INFO: Total images in validation data is 1
+2021-03-03 18:31:44,183:INFO: Total images in testing data is 1
+2021-03-03 18:31:44,183:INFO: 
+Start training ===========================================>
+2021-03-03 18:31:44,183:INFO: Initial learning Rate: 0.0001
+2021-03-03 18:31:44,183:INFO: Epoch[1/15] ==============>
+2021-03-03 18:32:12,538:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 18:32:12,554:INFO: Create Model ...
+2021-03-03 18:32:14,392:INFO: Total images in training data is 1
+2021-03-03 18:32:14,392:INFO: Total images in validation data is 1
+2021-03-03 18:32:14,392:INFO: Total images in testing data is 1
+2021-03-03 18:32:14,392:INFO: 
+Start training ===========================================>
+2021-03-03 18:32:14,392:INFO: Initial learning Rate: 0.0001
+2021-03-03 18:32:14,392:INFO: Epoch[1/15] ==============>
+2021-03-03 18:33:40,648:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 18:33:40,648:INFO: Create Model ...
+2021-03-03 18:33:42,465:INFO: Total images in training data is 1
+2021-03-03 18:33:42,465:INFO: Total images in validation data is 1
+2021-03-03 18:33:42,465:INFO: Total images in testing data is 1
+2021-03-03 18:33:42,481:INFO: 
+Start training ===========================================>
+2021-03-03 18:33:42,481:INFO: Initial learning Rate: 0.0001
+2021-03-03 18:33:42,481:INFO: Epoch[1/15] ==============>
+2021-03-03 18:38:27,794:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 18:38:27,794:INFO: Create Model ...
+2021-03-03 18:38:29,505:INFO: Total images in training data is 1
+2021-03-03 18:38:29,505:INFO: Total images in validation data is 1
+2021-03-03 18:38:29,506:INFO: Total images in testing data is 1
+2021-03-03 18:38:29,508:INFO: 
+Start training ===========================================>
+2021-03-03 18:38:29,508:INFO: Initial learning Rate: 0.0001
+2021-03-03 18:38:29,509:INFO: Epoch[1/15] ==============>
+2021-03-03 18:41:46,415:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 18:41:46,415:INFO: Create Model ...
+2021-03-03 18:41:48,264:INFO: Total images in training data is 1
+2021-03-03 18:41:48,264:INFO: Total images in validation data is 1
+2021-03-03 18:41:48,264:INFO: Total images in testing data is 1
+2021-03-03 18:41:48,279:INFO: 
+Start training ===========================================>
+2021-03-03 18:41:48,279:INFO: Initial learning Rate: 0.0001
+2021-03-03 18:41:48,279:INFO: Epoch[1/15] ==============>
+2021-03-03 18:43:16,394:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 18:43:16,394:INFO: Create Model ...
+2021-03-03 18:43:18,273:INFO: Total images in training data is 1
+2021-03-03 18:43:18,273:INFO: Total images in validation data is 1
+2021-03-03 18:43:18,273:INFO: Total images in testing data is 1
+2021-03-03 18:43:18,273:INFO: 
+Start training ===========================================>
+2021-03-03 18:43:18,273:INFO: Initial learning Rate: 0.0001
+2021-03-03 18:43:18,273:INFO: Epoch[1/15] ==============>
+2021-03-03 18:45:12,668:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 18:45:12,668:INFO: Create Model ...
+2021-03-03 18:45:14,496:INFO: Total images in training data is 1
+2021-03-03 18:45:14,496:INFO: Total images in validation data is 1
+2021-03-03 18:45:14,496:INFO: Total images in testing data is 1
+2021-03-03 18:45:14,496:INFO: 
+Start training ===========================================>
+2021-03-03 18:45:14,496:INFO: Initial learning Rate: 0.0001
+2021-03-03 18:45:14,496:INFO: Epoch[1/15] ==============>
+2021-03-03 18:45:39,205:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 18:45:39,205:INFO: Create Model ...
+2021-03-03 18:45:41,031:INFO: Total images in training data is 1
+2021-03-03 18:45:41,031:INFO: Total images in validation data is 1
+2021-03-03 18:45:41,031:INFO: Total images in testing data is 1
+2021-03-03 18:45:41,031:INFO: 
+Start training ===========================================>
+2021-03-03 18:45:41,031:INFO: Initial learning Rate: 0.0001
+2021-03-03 18:45:41,031:INFO: Epoch[1/15] ==============>
+2021-03-03 18:46:11,135:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 18:46:11,151:INFO: Create Model ...
+2021-03-03 18:46:12,983:INFO: Total images in training data is 1
+2021-03-03 18:46:12,983:INFO: Total images in validation data is 1
+2021-03-03 18:46:12,983:INFO: Total images in testing data is 1
+2021-03-03 18:46:12,983:INFO: 
+Start training ===========================================>
+2021-03-03 18:46:12,983:INFO: Initial learning Rate: 0.0001
+2021-03-03 18:46:12,983:INFO: Epoch[1/15] ==============>
+2021-03-03 18:46:36,664:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 18:46:36,664:INFO: Create Model ...
+2021-03-03 18:46:38,474:INFO: Total images in training data is 1
+2021-03-03 18:46:38,474:INFO: Total images in validation data is 1
+2021-03-03 18:46:38,475:INFO: Total images in testing data is 1
+2021-03-03 18:46:38,477:INFO: 
+Start training ===========================================>
+2021-03-03 18:46:38,477:INFO: Initial learning Rate: 0.0001
+2021-03-03 18:46:38,477:INFO: Epoch[1/15] ==============>
+2021-03-03 18:47:15,655:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 18:47:15,655:INFO: Create Model ...
+2021-03-03 18:47:17,503:INFO: Total images in training data is 1
+2021-03-03 18:47:17,503:INFO: Total images in validation data is 1
+2021-03-03 18:47:17,503:INFO: Total images in testing data is 1
+2021-03-03 18:47:17,503:INFO: 
+Start training ===========================================>
+2021-03-03 18:47:17,503:INFO: Initial learning Rate: 0.0001
+2021-03-03 18:47:17,503:INFO: Epoch[1/15] ==============>
+2021-03-03 18:47:52,475:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 18:47:52,475:INFO: Create Model ...
+2021-03-03 18:47:54,274:INFO: Total images in training data is 1
+2021-03-03 18:47:54,274:INFO: Total images in validation data is 1
+2021-03-03 18:47:54,274:INFO: Total images in testing data is 1
+2021-03-03 18:47:54,274:INFO: 
+Start training ===========================================>
+2021-03-03 18:47:54,274:INFO: Initial learning Rate: 0.0001
+2021-03-03 18:47:54,274:INFO: Epoch[1/15] ==============>
+2021-03-03 18:52:20,904:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 18:52:20,904:INFO: Create Model ...
+2021-03-03 18:52:22,635:INFO: Total images in training data is 1
+2021-03-03 18:52:22,635:INFO: Total images in validation data is 1
+2021-03-03 18:52:22,635:INFO: Total images in testing data is 1
+2021-03-03 18:52:22,637:INFO: 
+Start training ===========================================>
+2021-03-03 18:52:22,638:INFO: Initial learning Rate: 0.0001
+2021-03-03 18:52:22,638:INFO: Epoch[1/15] ==============>
+2021-03-03 18:54:52,348:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 18:54:52,349:INFO: Create Model ...
+2021-03-03 18:54:54,099:INFO: Total images in training data is 1
+2021-03-03 18:54:54,099:INFO: Total images in validation data is 1
+2021-03-03 18:54:54,099:INFO: Total images in testing data is 1
+2021-03-03 18:54:54,101:INFO: 
+Start training ===========================================>
+2021-03-03 18:54:54,102:INFO: Initial learning Rate: 0.0001
+2021-03-03 18:54:54,102:INFO: Epoch[1/15] ==============>
+2021-03-03 18:58:42,104:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 18:58:42,104:INFO: Create Model ...
+2021-03-03 18:58:43,840:INFO: Total images in training data is 1
+2021-03-03 18:58:43,840:INFO: Total images in validation data is 1
+2021-03-03 18:58:43,841:INFO: Total images in testing data is 1
+2021-03-03 18:58:43,843:INFO: 
+Start training ===========================================>
+2021-03-03 18:58:43,844:INFO: Initial learning Rate: 0.0001
+2021-03-03 18:58:43,844:INFO: Epoch[1/15] ==============>
+2021-03-03 18:59:46,712:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 18:59:46,712:INFO: Create Model ...
+2021-03-03 19:00:12,973:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 19:00:12,973:INFO: Create Model ...
+2021-03-03 19:00:13,138:INFO: Total images in training data is 1
+2021-03-03 19:00:13,139:INFO: Total images in validation data is 1
+2021-03-03 19:00:13,139:INFO: Total images in testing data is 1
+2021-03-03 19:00:13,140:INFO: 
+Start training ===========================================>
+2021-03-03 19:00:13,140:INFO: Initial learning Rate: 0.0001
+2021-03-03 19:00:13,140:INFO: Epoch[1/15] ==============>
+2021-03-03 19:00:49,007:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 19:00:49,008:INFO: Create Model ...
+2021-03-03 19:00:49,161:INFO: Total images in training data is 1
+2021-03-03 19:00:49,161:INFO: Total images in validation data is 1
+2021-03-03 19:00:49,162:INFO: Total images in testing data is 1
+2021-03-03 19:00:49,163:INFO: 
+Start training ===========================================>
+2021-03-03 19:00:49,165:INFO: Initial learning Rate: 0.0001
+2021-03-03 19:00:49,166:INFO: Epoch[1/15] ==============>
+2021-03-03 19:02:14,301:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 19:02:14,301:INFO: Create Model ...
+2021-03-03 19:02:14,481:INFO: Total images in training data is 1
+2021-03-03 19:02:14,481:INFO: Total images in validation data is 1
+2021-03-03 19:02:14,481:INFO: Total images in testing data is 1
+2021-03-03 19:02:14,483:INFO: 
+Start training ===========================================>
+2021-03-03 19:02:14,484:INFO: Initial learning Rate: 0.0001
+2021-03-03 19:02:14,484:INFO: Epoch[1/15] ==============>
+2021-03-03 19:03:11,799:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 19:03:11,799:INFO: Create Model ...
+2021-03-03 19:03:11,951:INFO: Total images in training data is 1
+2021-03-03 19:03:11,952:INFO: Total images in validation data is 1
+2021-03-03 19:03:11,952:INFO: Total images in testing data is 1
+2021-03-03 19:03:11,953:INFO: 
+Start training ===========================================>
+2021-03-03 19:03:11,953:INFO: Initial learning Rate: 0.0001
+2021-03-03 19:03:11,953:INFO: Epoch[1/15] ==============>
+2021-03-03 19:03:28,984:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 19:03:28,985:INFO: Create Model ...
+2021-03-03 19:03:29,136:INFO: Total images in training data is 1
+2021-03-03 19:03:29,136:INFO: Total images in validation data is 1
+2021-03-03 19:03:29,137:INFO: Total images in testing data is 1
+2021-03-03 19:03:29,137:INFO: 
+Start training ===========================================>
+2021-03-03 19:03:29,138:INFO: Initial learning Rate: 0.0001
+2021-03-03 19:03:29,138:INFO: Epoch[1/15] ==============>
+2021-03-03 19:06:19,519:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 19:06:19,520:INFO: Create Model ...
+2021-03-03 19:06:19,674:INFO: Total images in training data is 1
+2021-03-03 19:06:19,674:INFO: Total images in validation data is 1
+2021-03-03 19:06:19,675:INFO: Total images in testing data is 1
+2021-03-03 19:06:19,676:INFO: 
+Start training ===========================================>
+2021-03-03 19:06:19,676:INFO: Initial learning Rate: 0.0001
+2021-03-03 19:06:19,676:INFO: Epoch[1/15] ==============>
+2021-03-03 19:06:23,776:INFO: STEP: 0  LOSS 464459.0
+2021-03-03 19:08:08,774:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 19:08:08,775:INFO: Create Model ...
+2021-03-03 19:08:08,930:INFO: Total images in training data is 1
+2021-03-03 19:08:08,930:INFO: Total images in validation data is 1
+2021-03-03 19:08:08,932:INFO: Total images in testing data is 1
+2021-03-03 19:08:08,934:INFO: 
+Start training ===========================================>
+2021-03-03 19:08:08,935:INFO: Initial learning Rate: 0.0001
+2021-03-03 19:08:08,935:INFO: Epoch[1/15] ==============>
+2021-03-03 19:08:12,811:INFO: STEP: 0  LOSS 464601.375
+2021-03-03 19:09:15,431:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 19:09:15,431:INFO: Create Model ...
+2021-03-03 19:09:15,603:INFO: Total images in training data is 1
+2021-03-03 19:09:15,603:INFO: Total images in validation data is 1
+2021-03-03 19:09:15,603:INFO: Total images in testing data is 1
+2021-03-03 19:09:15,603:INFO: 
+Start training ===========================================>
+2021-03-03 19:09:15,603:INFO: Initial learning Rate: 0.0001
+2021-03-03 19:09:15,603:INFO: Epoch[1/15] ==============>
+2021-03-03 19:09:19,653:INFO: STEP: 0  LOSS 464702.34375
+2021-03-03 19:11:13,583:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 19:11:13,583:INFO: Create Model ...
+2021-03-03 19:11:13,741:INFO: Total images in training data is 1
+2021-03-03 19:11:13,741:INFO: Total images in validation data is 1
+2021-03-03 19:11:13,741:INFO: Total images in testing data is 1
+2021-03-03 19:11:13,741:INFO: 
+Start training ===========================================>
+2021-03-03 19:11:13,741:INFO: Initial learning Rate: 0.0001
+2021-03-03 19:11:13,741:INFO: Epoch[1/15] ==============>
+2021-03-03 19:11:17,726:INFO: STEP: 0  LOSS 464492.375
+2021-03-03 19:11:30,731:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 19:11:30,732:INFO: Create Model ...
+2021-03-03 19:11:30,884:INFO: Total images in training data is 1
+2021-03-03 19:11:30,885:INFO: Total images in validation data is 1
+2021-03-03 19:11:30,885:INFO: Total images in testing data is 1
+2021-03-03 19:11:30,885:INFO: 
+Start training ===========================================>
+2021-03-03 19:11:30,886:INFO: Initial learning Rate: 0.0001
+2021-03-03 19:11:30,886:INFO: Epoch[1/15] ==============>
+2021-03-03 19:11:34,725:INFO: STEP: 0  LOSS 464635.6875
+2021-03-03 19:13:08,195:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 19:13:08,195:INFO: Create Model ...
+2021-03-03 19:13:08,351:INFO: Total images in training data is 1
+2021-03-03 19:13:08,367:INFO: Total images in validation data is 1
+2021-03-03 19:13:08,367:INFO: Total images in testing data is 1
+2021-03-03 19:13:08,367:INFO: 
+Start training ===========================================>
+2021-03-03 19:13:08,367:INFO: Initial learning Rate: 0.0001
+2021-03-03 19:13:08,367:INFO: Epoch[1/15] ==============>
+2021-03-03 19:13:12,296:INFO: STEP: 0  LOSS 464723.34375
+2021-03-03 19:16:04,222:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 19:16:04,222:INFO: Create Model ...
+2021-03-03 19:16:04,394:INFO: Total images in training data is 1
+2021-03-03 19:16:04,394:INFO: Total images in validation data is 1
+2021-03-03 19:16:04,394:INFO: Total images in testing data is 1
+2021-03-03 19:16:04,394:INFO: 
+Start training ===========================================>
+2021-03-03 19:16:04,394:INFO: Initial learning Rate: 0.0001
+2021-03-03 19:16:04,394:INFO: Epoch[1/15] ==============>
+2021-03-03 19:16:08,517:INFO: STEP: 0  LOSS 464608.0
+2021-03-03 19:16:51,499:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 19:16:51,499:INFO: Create Model ...
+2021-03-03 19:16:51,656:INFO: Total images in training data is 1
+2021-03-03 19:16:51,656:INFO: Total images in validation data is 1
+2021-03-03 19:16:51,656:INFO: Total images in testing data is 1
+2021-03-03 19:16:51,656:INFO: 
+Start training ===========================================>
+2021-03-03 19:16:51,656:INFO: Initial learning Rate: 0.0001
+2021-03-03 19:16:51,656:INFO: Epoch[1/15] ==============>
+2021-03-03 19:16:55,567:INFO: STEP: 0  LOSS 464618.90625
+2021-03-03 19:23:05,270:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 19:23:05,286:INFO: Create Model ...
+2021-03-03 19:23:05,445:INFO: Total images in training data is 1
+2021-03-03 19:23:05,445:INFO: Total images in validation data is 1
+2021-03-03 19:23:05,445:INFO: Total images in testing data is 1
+2021-03-03 19:23:05,445:INFO: 
+Start training ===========================================>
+2021-03-03 19:23:05,445:INFO: Initial learning Rate: 0.0001
+2021-03-03 19:23:05,445:INFO: Epoch[1/15] ==============>
+2021-03-03 19:23:09,524:INFO: STEP: 0  LOSS 464642.0
+2021-03-03 19:25:53,483:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 19:25:53,483:INFO: Create Model ...
+2021-03-03 19:25:53,639:INFO: Total images in training data is 1
+2021-03-03 19:25:53,639:INFO: Total images in validation data is 1
+2021-03-03 19:25:53,639:INFO: Total images in testing data is 1
+2021-03-03 19:25:53,639:INFO: 
+Start training ===========================================>
+2021-03-03 19:25:53,639:INFO: Initial learning Rate: 0.0001
+2021-03-03 19:25:53,639:INFO: Epoch[1/15] ==============>
+2021-03-03 19:25:57,581:INFO: STEP: 0  LOSS 464596.28125
+2021-03-03 19:25:59,329:INFO: EPOCH 1 VALID PCK  0.0
+2021-03-03 19:25:59,329:INFO: EPOCH 1 TRAIN_LOSS 464596.28125
+2021-03-03 19:25:59,329:INFO: EPOCH 1 VALID_LOSS 464719.5727694244
+2021-03-03 19:25:59,360:INFO: Current Best EPOCH is : 1, PCK is : 0.0
+**************
+
+2021-03-03 19:25:59,376:INFO: Epoch[2/15] ==============>
+2021-03-03 19:26:03,210:INFO: STEP: 0  LOSS 463893.1875
+2021-03-03 19:26:05,051:INFO: EPOCH 2 VALID PCK  0.0
+2021-03-03 19:26:05,051:INFO: EPOCH 2 TRAIN_LOSS 463893.1875
+2021-03-03 19:26:05,051:INFO: EPOCH 2 VALID_LOSS 464357.0380113259
+2021-03-03 19:26:05,051:INFO: Current Best EPOCH is : 1, PCK is : 0.0
+**************
+
+2021-03-03 19:26:05,067:INFO: Epoch[3/15] ==============>
+2021-03-03 19:26:08,908:INFO: STEP: 0  LOSS 463189.21875
+2021-03-03 19:26:10,707:INFO: EPOCH 3 VALID PCK  0.0
+2021-03-03 19:26:10,707:INFO: EPOCH 3 TRAIN_LOSS 463189.21875
+2021-03-03 19:26:10,707:INFO: EPOCH 3 VALID_LOSS 463884.7372342451
+2021-03-03 19:26:10,707:INFO: Current Best EPOCH is : 1, PCK is : 0.0
+**************
+
+2021-03-03 19:26:10,707:INFO: Epoch[4/15] ==============>
+2021-03-03 19:26:14,663:INFO: STEP: 0  LOSS 462468.125
+2021-03-03 19:26:16,399:INFO: EPOCH 4 VALID PCK  0.0
+2021-03-03 19:26:16,399:INFO: EPOCH 4 TRAIN_LOSS 462468.125
+2021-03-03 19:26:16,399:INFO: EPOCH 4 VALID_LOSS 460918.7025279211
+2021-03-03 19:26:16,399:INFO: Current Best EPOCH is : 1, PCK is : 0.0
+**************
+
+2021-03-03 19:26:16,399:INFO: Epoch[5/15] ==============>
+2021-03-03 19:26:20,293:INFO: STEP: 0  LOSS 461760.40625
+2021-03-03 19:26:22,110:INFO: EPOCH 5 VALID PCK  0.0
+2021-03-03 19:26:22,110:INFO: EPOCH 5 TRAIN_LOSS 461760.40625
+2021-03-03 19:26:22,110:INFO: EPOCH 5 VALID_LOSS 461091.11412882106
+2021-03-03 19:26:22,110:INFO: Current Best EPOCH is : 1, PCK is : 0.0
+**************
+
+2021-03-03 19:26:22,110:INFO: Epoch[6/15] ==============>
+2021-03-03 19:26:26,082:INFO: STEP: 0  LOSS 461299.4375
+2021-03-03 19:26:27,915:INFO: EPOCH 6 VALID PCK  0.0
+2021-03-03 19:26:27,915:INFO: EPOCH 6 TRAIN_LOSS 461299.4375
+2021-03-03 19:26:27,915:INFO: EPOCH 6 VALID_LOSS 461147.05954141205
+2021-03-03 19:26:27,915:INFO: Current Best EPOCH is : 1, PCK is : 0.0
+**************
+
+2021-03-03 19:26:27,915:INFO: Epoch[7/15] ==============>
+2021-03-03 19:26:32,074:INFO: STEP: 0  LOSS 461061.78125
+2021-03-03 19:26:33,875:INFO: EPOCH 7 VALID PCK  0.0
+2021-03-03 19:26:33,875:INFO: EPOCH 7 TRAIN_LOSS 461061.78125
+2021-03-03 19:26:33,875:INFO: EPOCH 7 VALID_LOSS 461302.068698705
+2021-03-03 19:26:33,875:INFO: Current Best EPOCH is : 1, PCK is : 0.0
+**************
+
+2021-03-03 19:26:33,890:INFO: Epoch[8/15] ==============>
+2021-03-03 19:26:37,763:INFO: STEP: 0  LOSS 460872.15625
+2021-03-03 19:26:39,531:INFO: EPOCH 8 VALID PCK  0.0
+2021-03-03 19:26:39,531:INFO: EPOCH 8 TRAIN_LOSS 460872.15625
+2021-03-03 19:26:39,531:INFO: EPOCH 8 VALID_LOSS 461417.6026558263
+2021-03-03 19:26:39,531:INFO: Current Best EPOCH is : 1, PCK is : 0.0
+**************
+
+2021-03-03 19:26:39,531:INFO: Epoch[9/15] ==============>
+2021-03-03 19:26:43,569:INFO: STEP: 0  LOSS 460717.0
+2021-03-03 19:26:45,320:INFO: EPOCH 9 VALID PCK  0.0
+2021-03-03 19:26:45,320:INFO: EPOCH 9 TRAIN_LOSS 460717.0
+2021-03-03 19:26:45,320:INFO: EPOCH 9 VALID_LOSS 461659.43210819166
+2021-03-03 19:26:45,320:INFO: Current Best EPOCH is : 1, PCK is : 0.0
+**************
+
+2021-03-03 19:26:45,320:INFO: Epoch[10/15] ==============>
+2021-03-03 19:26:49,299:INFO: STEP: 0  LOSS 460597.5
+2021-03-03 19:26:51,129:INFO: EPOCH 10 VALID PCK  0.0
+2021-03-03 19:26:51,129:INFO: EPOCH 10 TRAIN_LOSS 460597.5
+2021-03-03 19:26:51,129:INFO: EPOCH 10 VALID_LOSS 461718.06664692383
+2021-03-03 19:26:51,129:INFO: Current Best EPOCH is : 1, PCK is : 0.0
+**************
+
+2021-03-03 19:26:51,129:INFO: Epoch[11/15] ==============>
+2021-03-03 19:26:55,089:INFO: STEP: 0  LOSS 460482.4375
+2021-03-03 19:26:56,931:INFO: EPOCH 11 VALID PCK  0.0
+2021-03-03 19:26:56,931:INFO: EPOCH 11 TRAIN_LOSS 460482.4375
+2021-03-03 19:26:56,931:INFO: EPOCH 11 VALID_LOSS 461866.6059971032
+2021-03-03 19:26:56,931:INFO: Current Best EPOCH is : 1, PCK is : 0.0
+**************
+
+2021-03-03 19:26:56,931:INFO: Epoch[12/15] ==============>
+2021-03-03 19:27:01,002:INFO: STEP: 0  LOSS 460450.25
+2021-03-03 19:27:02,786:INFO: EPOCH 12 VALID PCK  0.0
+2021-03-03 19:27:02,786:INFO: EPOCH 12 TRAIN_LOSS 460450.25
+2021-03-03 19:27:02,786:INFO: EPOCH 12 VALID_LOSS 461870.99633287627
+2021-03-03 19:27:02,786:INFO: Current Best EPOCH is : 1, PCK is : 0.0
+**************
+
+2021-03-03 19:27:02,786:INFO: Epoch[13/15] ==============>
+2021-03-03 19:27:06,708:INFO: STEP: 0  LOSS 460450.25
+2021-03-03 19:27:08,491:INFO: EPOCH 13 VALID PCK  0.0
+2021-03-03 19:27:08,491:INFO: EPOCH 13 TRAIN_LOSS 460450.25
+2021-03-03 19:27:08,491:INFO: EPOCH 13 VALID_LOSS 462010.74540727097
+2021-03-03 19:27:08,491:INFO: Current Best EPOCH is : 1, PCK is : 0.0
+**************
+
+2021-03-03 19:27:08,507:INFO: Epoch[14/15] ==============>
+2021-03-03 19:27:12,448:INFO: STEP: 0  LOSS 460450.25
+2021-03-03 19:27:14,302:INFO: EPOCH 14 VALID PCK  0.0
+2021-03-03 19:27:14,302:INFO: EPOCH 14 TRAIN_LOSS 460450.25
+2021-03-03 19:27:14,302:INFO: EPOCH 14 VALID_LOSS 462064.7685259093
+2021-03-03 19:27:14,302:INFO: Current Best EPOCH is : 1, PCK is : 0.0
+**************
+
+2021-03-03 19:27:14,302:INFO: Epoch[15/15] ==============>
+2021-03-03 19:27:18,392:INFO: STEP: 0  LOSS 460450.25
+2021-03-03 19:27:20,307:INFO: EPOCH 15 VALID PCK  0.0
+2021-03-03 19:27:20,307:INFO: EPOCH 15 TRAIN_LOSS 460450.25
+2021-03-03 19:27:20,307:INFO: EPOCH 15 VALID_LOSS 461974.5774650007
+2021-03-03 19:27:20,307:INFO: Current Best EPOCH is : 1, PCK is : 0.0
+**************
+
+2021-03-03 19:27:20,307:INFO: Train Done! 
+2021-03-03 19:27:20,307:INFO: Best epoch is 1
+2021-03-03 19:27:20,307:INFO: Best Valid PCK is 0.0
+2021-03-03 19:27:20,323:INFO: 
+TESTING ============================>
+2021-03-03 19:27:20,323:INFO: Load Trained model !!!
+2021-03-03 19:27:22,313:INFO: Done!
+2021-03-03 19:30:16,536:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 19:30:16,536:INFO: Create Model ...
+2021-03-03 19:30:18,368:INFO: Total images in training data is 1
+2021-03-03 19:30:18,368:INFO: Total images in validation data is 1
+2021-03-03 19:30:18,368:INFO: Total images in testing data is 1
+2021-03-03 19:30:18,368:INFO: 
+Start training ===========================================>
+2021-03-03 19:30:18,368:INFO: Initial learning Rate: 0.0001
+2021-03-03 19:30:18,368:INFO: Epoch[1/15] ==============>
+2021-03-03 19:32:06,694:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 19:32:06,695:INFO: Create Model ...
+2021-03-03 19:32:08,442:INFO: Total images in training data is 1
+2021-03-03 19:32:08,443:INFO: Total images in validation data is 1
+2021-03-03 19:32:08,443:INFO: Total images in testing data is 1
+2021-03-03 19:32:08,444:INFO: 
+Start training ===========================================>
+2021-03-03 19:32:08,445:INFO: Initial learning Rate: 0.0001
+2021-03-03 19:32:08,445:INFO: Epoch[1/15] ==============>
+2021-03-03 19:35:41,240:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 19:35:41,241:INFO: Create Model ...
+2021-03-03 19:35:42,959:INFO: Total images in training data is 1
+2021-03-03 19:35:42,959:INFO: Total images in validation data is 1
+2021-03-03 19:35:42,959:INFO: Total images in testing data is 1
+2021-03-03 19:35:42,959:INFO: 
+Start training ===========================================>
+2021-03-03 19:35:42,959:INFO: Initial learning Rate: 0.0001
+2021-03-03 19:35:42,959:INFO: Epoch[1/15] ==============>
+2021-03-03 19:36:04,814:INFO: ************** Experiment Name: EXP_ARB **************
+2021-03-03 19:36:04,814:INFO: Create Model ...
