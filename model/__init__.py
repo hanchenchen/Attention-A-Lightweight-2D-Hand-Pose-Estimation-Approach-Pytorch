@@ -1,8 +1,13 @@
+
+import os, sys
+currentUrl = os.path.dirname(__file__)
+parentUrl = os.path.abspath(os.path.join(currentUrl, os.pardir))
+sys.path.append(parentUrl)
 from .mish import Mish
 from .attention_augmentation2D import *
 from .blur import *
 
-
+config = {"ARB": "ARB_add"}
 # DepthwiseConv2d: https://gist.github.com/bdsaglam/b16de6ae6662e7a783e06e58e2c5185a
 class DepthwiseConv2d(nn.Conv2d):
     def __init__(self,
@@ -36,10 +41,11 @@ def aug_block(in_channels, out_channels, kernel_size, dk,dv, Nh, shape):
             nn.BatchNorm2d(out_channels),
             Mish()
         )
+
 # torch.nn.Conv2d(in_channels, out_channels, kernel_size, stride=1, padding=0, dilation=1, groups=1, bias=True, padding_mode='zeros')
-class ARB(nn.Module):
-    def __init__(self, in_channels, out_channels, kernel_size, aug=True, dk=40, dv=4, Nh=4, shape = 224):
-        super(ARB, self).__init__()
+class ARB_Add(nn.Module):
+    def __init__(self, in_channels, out_channels, kernel_size, aug=True, dk=0.1, dv=0.1, Nh=4, shape = 224):
+        super(ARB_Add, self).__init__()
         self.conv1 = nn.Sequential(
             nn.Conv2d(in_channels, out_channels * 4, kernel_size, padding = kernel_size//2),
             nn.BatchNorm2d(out_channels * 4),
@@ -64,13 +70,70 @@ class ARB(nn.Module):
         x = self.conv2(x)
         return x
 
+class ARB_Cat(nn.Module):
+    def __init__(self, in_channels, out_channels, kernel_size, aug=True, dk=0.1, dv=0.1, Nh=4, shape = 224):
+        super(ARB_Cat, self).__init__()
+        self.conv1 = nn.Sequential(
+            nn.Conv2d(in_channels, out_channels * 4, kernel_size, padding = kernel_size//2),
+            nn.BatchNorm2d(out_channels * 4),
+            Mish(),
+            DepthwiseConv2d(in_channels=out_channels * 4, kernel_size=kernel_size, padding = kernel_size//2),
+            nn.BatchNorm2d(out_channels * 4),
+            Mish()
+        )
+        self.aug = aug
+        self.attention_aug = aug_block(out_channels * 4, out_channels * 4, kernel_size, dk, dv, Nh, shape)
+        if self.aug:
+            self.conv2 = nn.Sequential(
+                nn.Conv2d(out_channels * 8, out_channels, kernel_size=1),
+                nn.BatchNorm2d(out_channels),
+                Mish(),
+            )
+        else:
+            self.conv2 = nn.Sequential(
+                nn.Conv2d(out_channels * 4, out_channels, kernel_size=1),
+                nn.BatchNorm2d(out_channels),
+                Mish(),
+            )
+
+    def forward(self, inputs):
+        x = self.conv1(inputs)
+        if self.aug:
+            augmented_conv = self.attention_aug(x)
+            x = torch.cat([augmented_conv, x], dim = 1)
+        x = self.conv2(x)
+        return x
+
+class ARB_None(nn.Module):
+    def __init__(self, in_channels, out_channels, kernel_size, aug=True, dk=0.1, dv=0.1, Nh=4, shape = 224):
+        super(ARB_None, self).__init__()
+        self.conv1 = nn.Sequential(
+            nn.Conv2d(in_channels, out_channels * 4, kernel_size, padding = kernel_size//2),
+            nn.BatchNorm2d(out_channels * 4),
+            Mish(),
+            DepthwiseConv2d(in_channels=out_channels * 4, kernel_size=kernel_size, padding = kernel_size//2),
+            nn.BatchNorm2d(out_channels * 4),
+            Mish()
+        )
+        self.conv2 = nn.Sequential(
+            nn.Conv2d(out_channels * 4, out_channels, kernel_size=1),
+            nn.BatchNorm2d(out_channels),
+            Mish(),
+        )
+
+    def forward(self, inputs):
+        x = self.conv1(inputs)
+        x = self.conv2(x)
+        return x
+
 
 class Dense(nn.Module):
     def __init__(self, in_channels, growth_rate, kernel_size, iteration, Nh=4, aug=True, shape = 224):
         super(Dense, self).__init__()
         self.iteration = iteration
-        self.arb = [ARB(in_channels, growth_rate, kernel_size=kernel_size, aug=aug, dk=0.1,
-                                dv=0.1, Nh=Nh, shape = shape)]
+        ARB = eval(config['ARB'])
+        self.arb = torch.nn.ModuleList([ARB(in_channels, growth_rate, kernel_size=kernel_size, aug=aug, dk=0.1,
+                                dv=0.1, Nh=Nh, shape = shape)])
         for i in range(1, self.iteration):
             self.arb.append(ARB(in_channels + growth_rate*i, growth_rate, kernel_size=kernel_size, aug=aug, dk=0.1,
                                 dv=0.1, Nh=Nh, shape = shape))
@@ -97,8 +160,10 @@ class Transition(nn.Module):
 
 
 class light_Model(nn.Module):
-    def __init__(self):
+    def __init__(self, conf):
         super(light_Model, self).__init__()
+        global config
+        config = conf
         input_shape = 224
         input_features = 3
         self.dense1 = Dense(in_channels=input_features, growth_rate=10, kernel_size=5, iteration=8, Nh=4, aug=False, shape = input_shape)
@@ -153,10 +218,10 @@ class light_Model(nn.Module):
         x = torch.reshape(x, (-1, 21, 2))
         return x
 if __name__ == "__main__":
-    model = light_Model()
-    x = torch.randn(1, 3, 224, 224)
+    model = light_Model().cuda()
+    x = torch.randn(1, 3, 224, 224).cuda()
     # print(model)
     # print(x)
     y = model(x)
     # y=aug_block(in_channels = 320 + 128, out_channels = 100, kernel_size = 2, dk = 0.1,dv = 0.1, Nh = 10, shape = 2)(x)
-    print('y', y.shape)
+    print('y', y.shape, y.device)

@@ -30,7 +30,7 @@ select_sigma = 0.1
 
 model_name = 'EXP_' + configs["name"]
 save_dir = os.path.join(model_name, 'checkpoint/')
-test_pck_dir = os.path.join(model_name, 'test')
+test_pck_dir = os.path.join(model_name, 'test.py')
 
 os.makedirs(save_dir, exist_ok=True)
 os.makedirs(test_pck_dir, exist_ok=True)
@@ -46,7 +46,7 @@ epochs = configs["epochs"]
 # data parameters ****************************
 
 device_ids = [args.GPU]      # multi-GPU
-# torch.cuda.set_device(device_ids[0])
+torch.cuda.set_device(device_ids[0])
 cuda = torch.cuda.is_available()
 
 logger = set_logger(os.path.join(model_name, 'train.log'))
@@ -55,10 +55,10 @@ logger.info("************** Experiment Name: {} **************".format(model_nam
 # ******************** build model ********************
 logger.info("Create Model ...")
 
-model = model.light_Model()
+model = model.light_Model(configs)
 if cuda:
     model = model.cuda(device_ids[0])
-    model = nn.DataParallel(model, device_ids=device_ids)
+    # cmodel = nn.DataParallel(model, device_ids=device_ids)
 
 # ******************** data preparation  ********************
 my_dataset = getattr(dataset, configs["dataset"])
@@ -75,8 +75,8 @@ test_loader = DataLoader(test_data, batch_size=batch_size, shuffle=False)
 
 
 # ********************  ********************
-# optimizer = optim.Adam(params=model.parameters(), lr=learning_rate)
-optimizer = optim.SGD(model.parameters(), lr = learning_rate, momentum=0.0)
+optimizer = optim.Adam(params=model.parameters(), lr=learning_rate)
+# optimizer = optim.SGD(model.parameters(), lr = learning_rate, momentum=0.0)
 
 def train():
     logger.info('\nStart training ===========================================>')
@@ -96,7 +96,7 @@ def train():
             if cuda:
                 img = img.cuda()
                 label_terget = label_terget.cuda()
-
+            # logger.info('LearningRate: {}'.format(optimizer.param_groups[0]['lr']))
             optimizer.zero_grad()
             label_pred = model(img)
             # limb_pred (FloatTensor.cuda) size:(bz,3,C,46,46)  after sigmoid
@@ -104,7 +104,7 @@ def train():
 
             # *************** calculate loss ***************
 
-            label_loss = loss.sum_mse_loss(label_pred.float().cpu(), label_terget.float())     # keypoint confidence loss
+            label_loss = loss.sum_mse_loss(label_pred.float(), label_terget.float())     # keypoint confidence loss
             label_loss.backward()
             optimizer.step()
 
@@ -144,7 +144,7 @@ def train():
 
 
 def eval(epoch, mode='valid'):
-    if mode is 'valid':
+    if mode == 'valid':
         loader = valid_loader
         gt_labels = valid_data.all_labels
     else:
@@ -168,7 +168,7 @@ def eval(epoch, mode='valid'):
             eval_loss.append(loss_final)
 
         # ******** save predict labels for valid/test data ********
-        if mode is 'valid':
+        if mode == 'valid':
             pred_save_dir = os.path.join(save_dir, 'e' + str(epoch) + '_val_pred.json')
         else:
             pred_save_dir = os.path.join(test_pck_dir, 'test_pred.json')
@@ -177,7 +177,7 @@ def eval(epoch, mode='valid'):
         # ************* calculate and save PCKs  ************
         pck_dict = get_pck_with_sigma(all_pred_labels, gt_labels, target_sigma_list)
 
-        if mode is 'valid':
+        if mode == 'valid':
             pck_save_dir = os.path.join(save_dir, 'e' + str(epoch) + '_pck.json')
         else:
             pck_save_dir = os.path.join(test_pck_dir, 'pck.json')

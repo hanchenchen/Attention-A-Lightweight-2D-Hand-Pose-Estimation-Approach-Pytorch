@@ -2,6 +2,7 @@
   "name": "ARB",
   "dataset":"HandDataset",
   "data_root":"data_sample/cmuhand",
+  "ARB": "ARB_Cat",
   "batch_size": 4,
   "learning_rate": 1e-4,
   "epochs": 15
