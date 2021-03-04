@@ -58,7 +58,7 @@ logger.info("Create Model ...")
 model = model.light_Model(configs)
 if cuda:
     model = model.cuda(device_ids[0])
-    # cmodel = nn.DataParallel(model, device_ids=device_ids)
+    model = nn.DataParallel(model, device_ids=device_ids)
 
 # ******************** data preparation  ********************
 my_dataset = getattr(dataset, configs["dataset"])
@@ -135,6 +135,7 @@ def train():
 
         # save current model
         torch.save(model.state_dict(), os.path.join(save_dir, 'final_epoch.pth'))
+        # torch.save(model.state_dict(), os.path.join(save_dir, 'epoch_' + str(epoch) + '_' + str(cur_pck) + '.pth'))
 
 
     logger.info('Train Done! ')
