@@ -45,8 +45,8 @@ def get_pred_coordinates(pred_map, name, w, h, all_pred_labels):
             tmp_pre = np.asarray(pred_map[b, k, :])   # 2D array  size:(2)
 
             # get coordinate of keypoints in origin image scale
-            x = int(tmp_pre[0] * (int(w[b]) / 46.0))
-            y = int(tmp_pre[1] * (int(h[b]) / 46.0))
+            x = int(tmp_pre[0] * w[b])
+            y = int(tmp_pre[1] * h[b])
             label_list.append([x, y])  # save img label to json
 
         # save prediction result to dict

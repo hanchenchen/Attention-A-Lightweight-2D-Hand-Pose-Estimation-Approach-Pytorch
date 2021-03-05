@@ -25,10 +25,13 @@ parser.add_argument('--GPU', type=int, default=0,
 args = parser.parse_args()
 configs = json.load(open('configs/' + args.config_file))
 
-target_sigma_list = [0.04, 0.06, 0.08, 0.1, 0.12]
-select_sigma = 0.1
+target_sigma_list = [0.05, 0.1, 0.15, 0.2, 0.25]
+select_sigma = 0.2
 
 model_name = 'EXP_' + configs["name"]
+if os.path.exists(model_name):
+    print("Delete last direction!")
+    exit()
 save_dir = os.path.join(model_name, 'checkpoint/')
 test_pck_dir = os.path.join(model_name, 'test.py')
 
@@ -77,6 +80,7 @@ test_loader = DataLoader(test_data, batch_size=batch_size, shuffle=False)
 # ********************  ********************
 optimizer = optim.Adam(params=model.parameters(), lr=learning_rate)
 # optimizer = optim.SGD(model.parameters(), lr = learning_rate, momentum=0.0)
+scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='max', factor=0.5, patience=3, threshold=0.00001, threshold_mode='rel', cooldown=0, min_lr=0, eps=1e-08, verbose=True)
 
 def train():
     logger.info('\nStart training ===========================================>')
@@ -110,7 +114,7 @@ def train():
 
             train_label_loss.append(label_loss.item())
 
-            if step % 50 == 0:
+            if step % 10 == 0:
                 logger.info('STEP: {}  LOSS {}'.format(step, label_loss.item()))
 
         # *************** save sample image after one epoch ***************
@@ -137,6 +141,8 @@ def train():
         torch.save(model.state_dict(), os.path.join(save_dir, 'final_epoch.pth'))
         # torch.save(model.state_dict(), os.path.join(save_dir, 'epoch_' + str(epoch) + '_' + str(cur_pck) + '.pth'))
 
+        # scheduler
+        scheduler.step(cur_pck)
 
     logger.info('Train Done! ')
     logger.info('Best epoch is {}'.format(best_epo))

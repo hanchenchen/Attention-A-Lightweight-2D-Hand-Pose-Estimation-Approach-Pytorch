@@ -4,7 +4,7 @@
   "data_root":"data_sample/Panoptic",
   "ARB": "ARB_None",
   "batch_size": 4,
-  "learning_rate": 1e-4,
+  "learning_rate": 0.01,
   "epochs": 100
 }
 
