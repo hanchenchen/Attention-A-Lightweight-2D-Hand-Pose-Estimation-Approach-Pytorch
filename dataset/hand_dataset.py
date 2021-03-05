@@ -57,21 +57,22 @@ class HandDataset(Dataset):
         img_label = self.all_labels[img_name]  # origin label list  21 * 2
 
         label = np.asarray(img_label)  # 21 * 2
-        label[:, 0] = label[:, 0] * self.img_size / w
-        label[:, 1] = label[:, 1] * self.img_size / h
+        label[:, 0] = label[:, 0] / w
+        label[:, 1] = label[:, 1] / h
 
         return image, label, img_name, w, h
 
 
 # test case
 if __name__ == "__main__":
-    data_root = 'data_sample/cmuhand'
+    data_root = 'data_sample/Panoptic'
 
     print('Dataset ===========>')
     data = HandDataset(data_root=data_root, mode='train')
-    image, label, img_name, w, h = data[0]
-    # ***************** draw Limb map *****************
-    print(image.shape, label.shape, img_name, w, h)
+    for i in range(len(data)):
+        image, label, img_name, w, h = data[i]
+        # ***************** draw Limb map *****************
+        print(image.shape, label, img_name, w, h)
 
 
 

@@ -9,7 +9,7 @@ def sum_mse_loss(pred, target):
     """
     criterion = nn.MSELoss(reduction='sum')
     loss = criterion(pred, target)
-    return loss
+    return loss / float(pred.shape[0])
 
 
 
