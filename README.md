@@ -11,11 +11,19 @@ TensorFlow 版本：https://github.com/hanchenchen/Attention-A-Lightweight-2D-Ha
 - Python 3.9.1
 - Cuda 10.1
 
+#### Update
+1. corrected the number of parameters
+2. Download the pre-processed dataset according to: https://github.com/HowieMa/NSRMhand. 
+    ```
+    mv path/to/CMUhand.tar ./
+    tar -xvf CMUhand.tar
+    ```
+
 #### Reference
 
 [1] Santavas N, Kansizoglou I, Bampis L, et al. Attention! a lightweight 2d hand pose estimation approach[J]. IEEE Sensors Journal, 2020. [[code]][https://github.com/nsantavas/Attention-A-Lightweight-2D-Hand-Pose-Estimation-Approach]
 
-[2] Chen Y, Ma H, Kong D, et al. Nonparametric structure regularization machine for 2D hand pose estimation[C]//Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision. 2020: 381-390. [code][https://github.com/HowieMa/NSRMhand]
+[2] Chen Y, Ma H, Kong D, et al. Nonparametric structure regularization machine for 2D hand pose estimation[C]//Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision. 2020: 381-390. [code][https://github.com/HowieMa/NSRMhand](This project is manually forked from this project. )
 
 [3] Wei S E, Ramakrishna V, Kanade T, et al. Convolutional pose machines[C]//Proceedings of the IEEE conference on Computer Vision and Pattern Recognition. 2016: 4724-4732.
 

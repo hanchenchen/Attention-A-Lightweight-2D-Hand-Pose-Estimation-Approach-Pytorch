@@ -1,4 +1,4 @@
-
+# This project is manually forked from this project: https://github.com/HowieMa/NSRMhand
 import os, sys
 currentUrl = os.path.dirname(__file__)
 parentUrl = os.path.abspath(os.path.join(currentUrl, os.pardir))
@@ -46,16 +46,18 @@ def aug_block(in_channels, out_channels, kernel_size, dk,dv, Nh, shape):
 class ARB_Add(nn.Module):
     def __init__(self, in_channels, out_channels, kernel_size, aug=True, dk=0.1, dv=0.1, Nh=4, shape = 224):
         super(ARB_Add, self).__init__()
+        self.kernel_size = kernel_size
         self.conv1 = nn.Sequential(
-            nn.Conv2d(in_channels, out_channels * 4, kernel_size, padding = kernel_size//2),
+            nn.Conv2d(in_channels, out_channels * 4, kernel_size=1, padding = 1//2),
             nn.BatchNorm2d(out_channels * 4),
             Mish(),
-            DepthwiseConv2d(in_channels=out_channels * 4, kernel_size=kernel_size, padding = kernel_size//2),
+            DepthwiseConv2d(in_channels=out_channels * 4, kernel_size=kernel_size, padding = (kernel_size-1)//2),
             nn.BatchNorm2d(out_channels * 4),
             Mish()
         )
         self.aug = aug
-        self.attention_aug = aug_block(out_channels * 4, out_channels * 4, kernel_size, dk, dv, Nh, shape)
+        if self.aug:
+            self.attention_aug = aug_block(out_channels * 4, out_channels * 4, kernel_size, dk, dv, Nh, shape)
         self.conv2 = nn.Sequential(
             nn.Conv2d(out_channels * 4, out_channels, kernel_size=1),
             nn.BatchNorm2d(out_channels),
@@ -63,6 +65,8 @@ class ARB_Add(nn.Module):
         )
 
     def forward(self, inputs):
+        if not (self.kernel_size % 2):
+            inputs = torch.nn.functional.pad(inputs, (0, 1, 0, 1), mode='constant', value=0)
         x = self.conv1(inputs)
         if self.aug:
             augmented_conv = self.attention_aug(x)
@@ -73,11 +77,12 @@ class ARB_Add(nn.Module):
 class ARB_Cat(nn.Module):
     def __init__(self, in_channels, out_channels, kernel_size, aug=True, dk=0.1, dv=0.1, Nh=4, shape = 224):
         super(ARB_Cat, self).__init__()
+        self.kernel_size = kernel_size
         self.conv1 = nn.Sequential(
-            nn.Conv2d(in_channels, out_channels * 4, kernel_size, padding = kernel_size//2),
+            nn.Conv2d(in_channels, out_channels * 4, 1, padding = 1//2),
             nn.BatchNorm2d(out_channels * 4),
             Mish(),
-            DepthwiseConv2d(in_channels=out_channels * 4, kernel_size=kernel_size, padding = kernel_size//2),
+            DepthwiseConv2d(in_channels=out_channels * 4, kernel_size=kernel_size, padding = (kernel_size-1)//2),
             nn.BatchNorm2d(out_channels * 4),
             Mish()
         )
@@ -97,6 +102,8 @@ class ARB_Cat(nn.Module):
             )
 
     def forward(self, inputs):
+        if not (self.kernel_size % 2):
+            inputs = torch.nn.functional.pad(inputs, (0, 1, 0, 1), mode='constant', value=0)
         x = self.conv1(inputs)
         if self.aug:
             augmented_conv = self.attention_aug(x)
@@ -107,11 +114,12 @@ class ARB_Cat(nn.Module):
 class ARB_None(nn.Module):
     def __init__(self, in_channels, out_channels, kernel_size, aug=True, dk=0.1, dv=0.1, Nh=4, shape = 224):
         super(ARB_None, self).__init__()
+        self.kernel_size = kernel_size
         self.conv1 = nn.Sequential(
-            nn.Conv2d(in_channels, out_channels * 4, kernel_size, padding = kernel_size//2),
+            nn.Conv2d(in_channels, out_channels * 4, 1, padding = 1//2),
             nn.BatchNorm2d(out_channels * 4),
             Mish(),
-            DepthwiseConv2d(in_channels=out_channels * 4, kernel_size=kernel_size, padding = kernel_size//2),
+            DepthwiseConv2d(in_channels=out_channels * 4, kernel_size=kernel_size, padding = (kernel_size-1)//2),
             nn.BatchNorm2d(out_channels * 4),
             Mish()
         )
@@ -122,6 +130,8 @@ class ARB_None(nn.Module):
         )
 
     def forward(self, inputs):
+        if not (self.kernel_size % 2):
+            inputs = torch.nn.functional.pad(inputs, (0, 1, 0, 1), mode='constant', value=0)
         x = self.conv1(inputs)
         x = self.conv2(x)
         return x
@@ -139,10 +149,12 @@ class Dense(nn.Module):
                                 dv=0.1, Nh=Nh, shape = shape))
 
     def forward(self, inputs):
-        x = [inputs]
+        x_list = [inputs]
         for i in range(self.iteration):
-            x.append(self.arb[i](torch.cat(x, dim=1)))
-        return torch.cat(x, dim=1)
+            inputs = self.arb[i](inputs)
+            x_list.append(inputs)
+            inputs = torch.cat(x_list, dim=1)
+        return inputs
 
 
 class Transition(nn.Module):
@@ -187,7 +199,7 @@ class light_Model(nn.Module):
         self.dense7 = Dense(in_channels=128, growth_rate=10, kernel_size=3, iteration=14, Nh=4, aug=True, shape = 4)
         ############################### 2
         self.transition7 = Transition(in_channels=140 + 128, out_channels=128)
-        self.dense8 = Dense(in_channels=128, growth_rate=10, kernel_size=3, iteration=32, Nh=4, aug=True, shape = 2)
+        self.dense8 = Dense(in_channels=128, growth_rate=10, kernel_size=2, iteration=32, Nh=4, aug=True, shape = 2)
         self.aug_block = aug_block(in_channels = 320 + 128, out_channels = 100, kernel_size = 2, dk = 0.1,dv = 0.1, Nh = 10, shape = 2)
         self.avg_pool = nn.AvgPool2d(kernel_size = 2, stride = 2)
         self.conv = nn.Conv2d(in_channels = 100, out_channels = 42, kernel_size=1)

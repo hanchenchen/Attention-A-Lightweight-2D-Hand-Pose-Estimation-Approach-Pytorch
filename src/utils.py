@@ -65,7 +65,7 @@ def get_pck_with_sigma(predict_labels_dict, gt_labels, sigma_list):
     :param sigma_list:       list    different sigma threshold
     :return:
     """
-    print(predict_labels_dict)
+    # print(predict_labels_dict)
     pck_dict = {}
     for im in predict_labels_dict:
         gt_label = gt_labels[im]        # list    len:21      element:[x, y]

@@ -29,7 +29,7 @@ class AugmentedConv(nn.Module):
 
         self.conv_out = nn.Conv2d(self.in_channels, self.out_channels - self.dv, self.kernel_size, stride=stride, padding=self.padding)
 
-        self.qkv_conv = nn.Conv2d(self.in_channels, 2 * self.dk + self.dv, kernel_size=self.kernel_size, stride=stride, padding=self.padding)
+        self.qkv_conv = nn.Conv2d(self.in_channels, 2 * self.dk + self.dv, kernel_size=1, stride=1, padding=1//2)
 
         self.attn_out = nn.Conv2d(self.dv, self.dv, kernel_size=1, stride=1)
         if self.relative:
@@ -44,8 +44,10 @@ class AugmentedConv(nn.Module):
         # conv_out
         # (batch_size, out_channels, height, width)
         if not (self.kernel_size % 2):
-            x = torch.nn.functional.pad(x, (0, 1, 0, 1), mode='constant', value=0)
-        conv_out = self.conv_out(x)
+            _x = torch.nn.functional.pad(x, (0, 1, 0, 1), mode='constant', value=0)
+        else:
+            _x = x
+        conv_out = self.conv_out(_x)
         batch, _, height, width = conv_out.size()
 
         # flat_q, flat_k, flat_v

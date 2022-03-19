@@ -30,10 +30,10 @@ select_sigma = 0.2
 
 model_name = 'EXP_' + configs["name"]
 if os.path.exists(model_name):
-    print("Delete last direction!")
+    print("the log directory exists!")
     exit()
 save_dir = os.path.join(model_name, 'checkpoint/')
-test_pck_dir = os.path.join(model_name, 'test.py')
+test_pck_dir = os.path.join(model_name, 'test/')
 
 os.makedirs(save_dir, exist_ok=True)
 os.makedirs(test_pck_dir, exist_ok=True)
@@ -62,6 +62,19 @@ model = model.light_Model(configs)
 if cuda:
     model = model.cuda(device_ids[0])
     model = nn.DataParallel(model, device_ids=device_ids)
+# print(model)
+# from thop import profile
+# input = torch.randn(1, 3, 224, 224)
+# flops, params = profile(model, inputs=(input, ))
+# print(flops, params)
+def get_parameter_number(model):
+    total_num = sum(p.numel() for p in model.parameters())
+    trainable_num = sum(p.numel() for p in model.parameters() if p.requires_grad)
+    # for name, p in model.named_parameters():
+    #     if p.requires_grad:
+    #         print(name, p.numel())
+    return {'Total': total_num, 'Trainable': trainable_num}
+print('the number of params:', get_parameter_number(model))
 
 # ******************** data preparation  ********************
 my_dataset = getattr(dataset, configs["dataset"])
